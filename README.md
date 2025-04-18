@@ -1,17 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <meta name="description" content="Dr. Md Arquam - Assistant Professor at Indian Institute of Information Technology Sonepat. Research in Computer Science and Engineering.">
-    <title>Dr. Md Arquam | IIIT Sonepat</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto+Mono&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
-  </body>
-</html>
+import { createRoot } from "react-dom/client";
+import App from "./App";
+import "./index.css";
+
+// Add font family classes to tailor the styling of the page
+document.documentElement.classList.add("font-sans");
+
+// Set custom styles for fonts in the document
+const style = document.createElement("style");
+style.textContent = `
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217 60% 27%;
+    --primary: 217 60% 27%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 12 100% 44.3%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Default to rounded corners */
+    --radius: 0.5rem;
+  }
+
+  /* Set custom font families */
+  .font-serif {
+    font-family: 'Merriweather', serif;
+  }
+
+  .font-sans {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'Roboto Mono', monospace;
+  }
+`;
+
+document.head.appendChild(style);
+
+createRoot(document.getElementById("root")!).render(<App />);
